@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+    <!-- 구글폰트 -->
+    <link href="https://fonts.googleapis.com/css?family=Stylish&display=swap" rel="stylesheet">
+
+    <title>고양이 데려가세</title>
+
+    <!-- style -->
+    <style type="text/css">
+        * {
+            font-family: 'Stylish', sans-serif;
+        }
+        .wrap{
+            margin: 20px auto;
+            width: 800px;
+        }
+        .largeText {
+            font-size: 40px;
+        }
+        .smallText {
+            font-size: 20px;
+        }
+        .center {
+            width: 800px;
+            margin: auto;
+        }
+        .imageAlign {
+            width: 800px;
+            margin: auto;
+            text-align: center;
+        }
+        .buttonCenter {
+            width: 300px;
+            margin: auto;
+        }
+    </style>
+    <script>
+        function buyingCheck(){
+            alert('주문이 완료되었습니다.');
+        }
+    </script>
+</head>
+
+<body>
+<div class = "wrap">
+    <div class = "imageAlign">
+        <img src="https://ichef.bbci.co.uk/news/800/cpsprodpb/AD6E/production/_104889344_kitten.jpg">
+    </div>
+    <p>
+    <div class="center">
+        <h1 class="catsProfile largeText">고양이 짱귀엽죠
+        <a class="catsProfile smallText">성별 : 공쥬님/3개월</a></h1>
+        <p class="catsInfo">이 고양이로 말할 것 같으면 산신령 같이 뻗은 긴 털이 매력이며
+        얼룩 고양이 같지만 사실은 갈색,검은색, 흰색으로 이루어진 삼색 고양이라는 점이다.
+        세상에 이렇게 귀여운 고양이가 있다니...뉘집냥인고..!! 이 예쁜 냥이의 집사되실 분을 구합니다</p>
+    </div>
+    </p>
+    <p>
+    <div class="wrap adoptPart">
+        <a class="largeText">입양하기</a>
+    </div>
+    <div class="form-post post-box">
+        <div>
+            <div class="form-group row smallText">
+                <label for="inputName" class="col-sm-2 col-form-label">성함 :</label>
+                <div class="col-sm-5">
+                    <input type="name" class="form-control" id="inputName" placeholder="">
+                </div>
+            </div>
+            <div class="form-group row smallText">
+            <label for="inputNumber" class="col-sm-2 col-form-label">간식수량 :</label>
+            <select class="form-control col-sm-5" id="inputNumber">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
+            </div>
+            <div class="form-group row smallText">
+                <label for="inputName" class="col-sm-2 col-form-label">주소 :</label>
+                <div class="col-sm-5">
+                    <input type="name" class="form-control" id="inputName" placeholder="">
+                </div>
+            </div>
+            <div class="form-group row smallText">
+                <label for="inputName" class="col-sm-2 col-form-label">전화번호 :</label>
+                <div class="col-sm-5">
+                    <input type="name" class="form-control" id="inputName" placeholder="">
+                </div>
+            </div>
+            <div class="buttonCenter">
+                <button onclick="buyingCheck()" type="button" class="btn btn-primary buttonCenter">주문하기</button>
+            </div>
+        </div>
+    </div>
+    </p>
