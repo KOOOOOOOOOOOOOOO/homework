@@ -2,6 +2,8 @@
 <module type="PYTHON_MODULE" version="4">
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/homework/aloneshop/venv" />
+      <excludeFolder url="file://$MODULE_DIR$/projects/alonememo/venv" />
       <excludeFolder url="file://$MODULE_DIR$/projects/bookreview/venv" />
       <excludeFolder url="file://$MODULE_DIR$/projects/prac/venv" />
       <excludeFolder url="file://$MODULE_DIR$/week03/venv" />
