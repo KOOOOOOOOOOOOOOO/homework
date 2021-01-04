@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="b7d8deba-89b3-44f5-8e5b-f59444b546c5" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../html5up-stellar/LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../html5up-stellar/README.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../html5up-stellar/assets/css/fontawesome-all.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../html5up-stellar/assets/css/images/overlay.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../html5up-stellar/assets/css/main.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../html5up-stellar/assets/css/noscript.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../html5up-stellar/assets/js/breakpoints.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../html5up-stellar/assets/js/browser.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../html5up-stellar/assets/js/jquery.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../html5up-stellar/assets/js/jquery.scrollex.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../html5up-stellar/assets/js/jquery.scrolly.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../html5up-stellar/assets/js/main.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../html5up-stellar/assets/js/util.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../html5up-stellar/assets/sass/base/_page.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../html5up-stellar/assets/sass/base/_reset.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../html5up-stellar/assets/sass/base/_typography.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../html5up-stellar/assets/sass/components/_actions.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../html5up-stellar/assets/sass/components/_box.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../html5up-stellar/assets/sass/components/_button.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../html5up-stellar/assets/sass/components/_features.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../html5up-stellar/assets/sass/components/_form.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../html5up-stellar/assets/sass/components/_icon.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../html5up-stellar/assets/sass/components/_icons.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../html5up-stellar/assets/sass/components/_image.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../html5up-stellar/assets/sass/components/_list.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../html5up-stellar/assets/sass/components/_row.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../html5up-stellar/assets/sass/components/_section.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../html5up-stellar/assets/sass/components/_spotlight.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../html5up-stellar/assets/sass/components/_statistics.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../html5up-stellar/assets/sass/components/_table.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../html5up-stellar/assets/sass/layout/_footer.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../html5up-stellar/assets/sass/layout/_header.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../html5up-stellar/assets/sass/layout/_main.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../html5up-stellar/assets/sass/layout/_nav.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../html5up-stellar/assets/sass/layout/_wrapper.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../html5up-stellar/assets/sass/libs/_breakpoints.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../html5up-stellar/assets/sass/libs/_functions.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../html5up-stellar/assets/sass/libs/_html-grid.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../html5up-stellar/assets/sass/libs/_mixins.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../html5up-stellar/assets/sass/libs/_vars.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../html5up-stellar/assets/sass/libs/_vendor.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../html5up-stellar/assets/sass/main.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../html5up-stellar/assets/sass/noscript.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../html5up-stellar/assets/webfonts/fa-brands-400.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../html5up-stellar/assets/webfonts/fa-brands-400.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../html5up-stellar/assets/webfonts/fa-brands-400.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../html5up-stellar/assets/webfonts/fa-brands-400.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../html5up-stellar/assets/webfonts/fa-brands-400.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../html5up-stellar/assets/webfonts/fa-regular-400.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../html5up-stellar/assets/webfonts/fa-regular-400.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../html5up-stellar/assets/webfonts/fa-regular-400.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../html5up-stellar/assets/webfonts/fa-regular-400.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../html5up-stellar/assets/webfonts/fa-regular-400.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../html5up-stellar/assets/webfonts/fa-solid-900.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../html5up-stellar/assets/webfonts/fa-solid-900.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../html5up-stellar/assets/webfonts/fa-solid-900.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../html5up-stellar/assets/webfonts/fa-solid-900.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../html5up-stellar/assets/webfonts/fa-solid-900.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../html5up-stellar/elements.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../html5up-stellar/generic.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../html5up-stellar/images/cat_logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../html5up-stellar/images/map_pic.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../html5up-stellar/images/pic01.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../html5up-stellar/images/pic02.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../html5up-stellar/images/pic03.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../html5up-stellar/images/pic04.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../html5up-stellar/images/pic05.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../html5up-stellar/images/pic06.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../html5up-stellar/index.html" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="JupyterTrust" id="62b5a705-a1b1-4ab6-9ddb-0d5a40ba3c39" />
+  <component name="ProjectId" id="1mKBeyXrNfGT2IJz0VF8zhFKahA" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RunManager">
+    <configuration name="bookreview" type="PythonConfigurationType" factoryName="Python">
+      <module name="bookreview" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/app.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b7d8deba-89b3-44f5-8e5b-f59444b546c5" name="Default Changelist" comment="" />
+      <created>1609232502215</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1609232502215</updated>
+      <workItem from="1609232503371" duration="245000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1418" height="264" key="GridCell.Tab.0.bottom" timestamp="1609232748327">
+      <screen x="0" y="23" width="1680" height="977" />
+    </state>
+    <state width="1418" height="264" key="GridCell.Tab.0.bottom/0.23.1680.977@0.23.1680.977" timestamp="1609232748327" />
+    <state width="1418" height="264" key="GridCell.Tab.0.center" timestamp="1609232748326">
+      <screen x="0" y="23" width="1680" height="977" />
+    </state>
+    <state width="1418" height="264" key="GridCell.Tab.0.center/0.23.1680.977@0.23.1680.977" timestamp="1609232748326" />
+    <state width="1418" height="264" key="GridCell.Tab.0.left" timestamp="1609232748325">
+      <screen x="0" y="23" width="1680" height="977" />
+    </state>
+    <state width="1418" height="264" key="GridCell.Tab.0.left/0.23.1680.977@0.23.1680.977" timestamp="1609232748325" />
+    <state width="1418" height="264" key="GridCell.Tab.0.right" timestamp="1609232748326">
+      <screen x="0" y="23" width="1680" height="977" />
+    </state>
+    <state width="1418" height="264" key="GridCell.Tab.0.right/0.23.1680.977@0.23.1680.977" timestamp="1609232748326" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/bookreview$bookreview.coverage" NAME="bookreview Coverage Results" MODIFIED="1609232699320" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+  </component>
+</project>
