@@ -1,0 +1,128 @@
+<!DOCTYPE HTML>
+<!--
+	Stellar by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Generic - Stellar by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../static/assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="../static/assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+	<script>
+		$(document).ready(function(){
+			$('#table-box').html("")
+			showBoard();
+		})
+
+		function showBoard(){
+			$.ajax({
+				type: 'GET',
+				url: '/board',
+				data: {},
+				success: function (response){
+					if (response['result'] == 'success'){
+						let boards = response["boards"];
+						for (let i = 0; i < boards.length; i++){
+							makeBoard(boards[i]["title"],boards[i]["author"],boards[i]["comment"])
+						}
+					}else {
+						alert("글을 받아오지 못했습니다")
+					}
+				}
+			})
+		}
+		function makeBoard(title,author,comment){
+        let tempHtml = `<tbody>
+        <tr>
+            <td>1</td>
+            <td>${title}</td>
+            <td>${author}</td>
+            <td>${comment}</td>
+            <td>1</td>
+        </tr>
+    </tbody>`
+        $('#table-box').append(tempHtml);
+    }
+
+	</script>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1>우리동네 캣러버들과 Talk!</h1>
+						<p>자유롭게 고양이 Talk! 매너를 지켜주세요~</p>
+					</header>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Content -->
+							<section id="content" class="main">
+								<h2>고양이 Talk</h2>
+								<p>
+								<div>
+									<table class = "table table-striped" id= "table-box">
+										<thead>
+											<tr>
+												<th>번호</th>
+												<th>제목</th>
+												<th>작성자</th>
+												<th>날짜</th>
+												<th>조회수</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>1</td>
+												<td>어쩌구쓰저쩌구쓰</td>
+												<td>구찌루</td>
+												<td>2020.12.29</td>
+												<td>1</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								</p>
+							</section>
+
+					</div>
+
+				<!-- Footer -->
+				<footer id="footer">
+					<section>
+						<h2>For all the Cats and Animals!</h2>
+						<p>세상의 모든 고양이들이 행복해지는 그날 까지! 사람과 동물이 공존하는 아름다운 세상이 왔으면 좋겠어요</p>
+					</section>
+					<section>
+						<h2>Contact me!</h2>
+						<dl class="alt">
+							<dt>GitHub</dt>
+							<dd>https://github.com/KOOOOOOOOOOOOOOO</dd>
+							<dt>Phone</dt>
+							<dd>(000) 000-0000 x 0000</dd>
+							<dt>Email</dt>
+							<dd>pdw05406@gmail.com</dd>
+						</dl>
+					</section>
+				</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="../static/assets/js/jquery.min.js"></script>
+			<script src="../static/assets/js/jquery.scrollex.min.js"></script>
+			<script src="../static/assets/js/jquery.scrolly.min.js"></script>
+			<script src="../static/assets/js/browser.min.js"></script>
+			<script src="../static/assets/js/breakpoints.min.js"></script>
+			<script src="../static/assets/js/util.js"></script>
+			<script src="../static/assets/js/main.js"></script>
+
+	</body>
+</html>

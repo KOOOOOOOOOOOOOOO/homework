@@ -3,6 +3,7 @@
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
       <excludeFolder url="file://$MODULE_DIR$/homework/aloneshop/venv" />
+      <excludeFolder url="file://$MODULE_DIR$/my_project/우리동네 길고양이/venv" />
       <excludeFolder url="file://$MODULE_DIR$/projects/alonememo/venv" />
       <excludeFolder url="file://$MODULE_DIR$/projects/bookreview/venv" />
       <excludeFolder url="file://$MODULE_DIR$/projects/moviestar/venv" />
