@@ -1,0 +1,162 @@
+<!DOCTYPE HTML>
+<!--
+	Stellar by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Generic - Stellar by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../static/assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="../static/assets/css/noscript.css" /></noscript>
+		<style type="text/css">
+            * {
+                font-family: "Do Hyeon", sans-serif;
+            }
+
+            h1,
+            h5 {
+                display: inline;
+            }
+
+            .info {
+                margin-top: 20px;
+                margin-bottom: 20px;
+            }
+
+            .review {
+                text-align: center;
+            }
+
+            .reviews {
+                margin-top: 100px;
+            }
+        </style>
+	</head>
+	<body class="is-preload">
+	<script>
+		function makeReview() {
+                // 1. 제목, 저자, 리뷰 내용을 가져옵니다.
+
+                let title = $("#title").val();
+                let author = $("#author").val();
+                let comment = $("#comment").val();
+                // 2. 제목, 저자, 리뷰 중 하나라도 입력하지 않았을 경우 alert를 띄웁니다.
+                if(title == ""){
+                    alert("제목을 입력해주세요");
+                    $("#title").focus();
+                    return;
+                }else if (author == ""){
+                    alert("저자를 입력해주세요");
+                    $("#author").focus();
+                    return;
+                }else if (review == ""){
+                    alert("내용 입력해주세요");
+                    $("#comment").focus();
+                    return;
+                }
+                // 3. POST /review 에 저장을 요청합니다.
+                 $.ajax({
+                    type: "POST",
+                    url: "/board_insert",
+                    data: {title_give : title, author_give : author, comment_give : comment },
+                    success: function (response) {
+                        if (response["result"] == "success") {
+                            alert(response["msg"]);
+                            window.location.reload();
+                        }else{
+                        	alert("글작성에 실패했단다")
+						}
+                    }
+                })
+            }
+             function validateLength(obj) {
+                let content = $(obj).val();
+                if (content.length > 140) {
+                    alert("글은 140까지 기록할 수 있습니다.");
+                    $(obj).val(content.substring(0, content.length - 1));
+                }
+            }
+	</script>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1>우리동네 캣러버들과 Talk!</h1>
+						<p>자유롭게 고양이 Talk! 매너를 지켜주세요~</p>
+					</header>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Content -->
+							<section id="content" class="main">
+								<h2>고양이 Talk</h2>
+                                <p></p>
+							</section>
+						<section class="content" style="max-width: 800px;">
+            				<div class="info">
+               		 			<h1>읽은 책에 대해 말씀해주세요.</h1>
+               						 <p>다른 사람을 위해 리뷰를 남겨주세요! 다 같이 좋은 책을 읽는다면 다 함께 행복해질 수 있지 않을까요?</p>
+                				<div class="input-group mb-3">
+                    				<div class="input-group-prepend">
+                        				<span class="input-group-text">제목</span>
+                    			</div>
+									<input type="text" class="form-control" id="title">
+                				</div>
+               					 <div class="input-group mb-3">
+                    			<div class="input-group-prepend">
+                        			<span class="input-group-text">글쓴</span>
+								</div>
+                    			<input type="text" class="form-control" id="author">
+                				</div>
+								<div class="input-group mb-3">
+									<div class="input-group-prepend">
+										<span class="input-group-text">글내용</span>
+									</div>
+									<textarea class="form-control" id="comment"
+											  cols="30"
+											  rows="5" placeholder="140자까지 입력할 수 있습니다." onkeyup="validateLength(this)"></textarea>
+								</div>
+								<div class="review">
+									<button onclick="makeReview()" type="button" class="btn btn-primary">리뷰 작성하기</button>
+								</div>
+							</div>
+					</section>
+
+				<!-- Footer -->
+				<footer id="footer">
+					<section>
+						<h2>For all the Cats and Animals!</h2>
+						<p>세상의 모든 고양이들이 행복해지는 그날 까지! 사람과 동물이 공존하는 아름다운 세상이 왔으면 좋겠어요</p>
+					</section>
+					<section>
+						<h2>Contact me!</h2>
+						<dl class="alt">
+							<dt>GitHub</dt>
+							<dd>https://github.com/KOOOOOOOOOOOOOOO</dd>
+							<dt>Phone</dt>
+							<dd>(000) 000-0000 x 0000</dd>
+							<dt>Email</dt>
+							<dd>pdw05406@gmail.com</dd>
+						</dl>
+					</section>
+				</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="../static/assets/js/jquery.min.js"></script>
+			<script src="../static/assets/js/jquery.scrollex.min.js"></script>
+			<script src="../static/assets/js/jquery.scrolly.min.js"></script>
+			<script src="../static/assets/js/browser.min.js"></script>
+			<script src="../static/assets/js/breakpoints.min.js"></script>
+			<script src="../static/assets/js/util.js"></script>
+			<script src="../static/assets/js/main.js"></script>
+
+	</body>
+</html>

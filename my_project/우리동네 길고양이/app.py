@@ -12,7 +12,19 @@ db = client.dbsparta
 def home():
     return render_template('index.html')
 
-@app.route('/board', methods=['POST'])
+@app.route('/board_list')
+def board_list():
+    return render_template('board_list.html')
+
+@app.route('/generic')
+def generic():
+    return render_template('generic.html')
+
+@app.route('/board_create')
+def board_create():
+    return render_template('board_create.html')
+
+@app.route('/board_insert', methods=['POST'])
 def insert_board():
     title_receive = request.form['title_give']
     author_receive = request.form['author_give']
@@ -22,7 +34,7 @@ def insert_board():
     post = {
         'title' : title_receive,
         'author' : author_receive,
-        'comment' : comment_receive
+        'comment' : comment_receive,
         #"date" : date
     }
 
@@ -31,8 +43,8 @@ def insert_board():
 
 @app.route('/board',methods=['GET'])
 def read_board():
-    boards = list(db.boards.find({}, {'_id': False}))
-    return jsonify({'result': 'success', 'boards': boards })
+    boards = list(db.post.find({}, {'_id': False}))
+    return jsonify({'result': 'success', 'post': boards })
 
 if __name__ == '__main__':
     app.run('0.0.0.0', port=5000, debug=True)
