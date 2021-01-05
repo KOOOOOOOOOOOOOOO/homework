@@ -26,7 +26,7 @@
 				data: {},
 				success: function (response){
 					if (response['result'] == 'success'){
-						let boards = response["boards"];
+						let boards = response["post"];
 						for (let i = 0; i < boards.length; i++){
 							makeBoard(boards[i]["title"],boards[i]["author"],boards[i]["comment"])
 						}
