@@ -96,12 +96,9 @@
 						<!-- Content -->
 							<section id="content" class="main">
 								<h2>고양이 Talk</h2>
-                                <p></p>
 							</section>
-						<section class="content" style="max-width: 800px;">
-            				<div class="info">
-               		 			<h1>읽은 책에 대해 말씀해주세요.</h1>
-               						 <p>다른 사람을 위해 리뷰를 남겨주세요! 다 같이 좋은 책을 읽는다면 다 함께 행복해질 수 있지 않을까요?</p>
+						<section class="main" style="max-width: 1200px;">
+            				<div class="content">
                 				<div class="input-group mb-3">
                     				<div class="input-group-prepend">
                         				<span class="input-group-text">제목</span>
@@ -122,9 +119,11 @@
 											  cols="30"
 											  rows="5" placeholder="140자까지 입력할 수 있습니다." onkeyup="validateLength(this)"></textarea>
 								</div>
+								<p>
 								<div class="review">
-									<button onclick="makeReview()" type="button" class="btn btn-primary">리뷰 작성하기</button>
+									<button onclick="makeReview()" href = "/board_list" type="button" class="btn btn-primary">글 작성하기</button>
 								</div>
+							</p>
 							</div>
 					</section>
 

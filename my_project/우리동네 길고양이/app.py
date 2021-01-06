@@ -28,14 +28,14 @@ def board_create():
 def insert_board():
     title_receive = request.form['title_give']
     author_receive = request.form['author_give']
-    #date = datetime.datetime.today()
+    date = datetime.datetime.today()
     comment_receive = request.form['comment_give']
 
     post = {
         'title' : title_receive,
         'author' : author_receive,
         'comment' : comment_receive,
-        #"date" : date
+        'date' : date
     }
 
     db.boards.insert_one(post)

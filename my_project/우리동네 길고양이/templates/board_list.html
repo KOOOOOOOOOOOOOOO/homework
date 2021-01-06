@@ -11,6 +11,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="../static/assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="../static/assets/css/noscript.css" /></noscript>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	</head>
 	<body class="is-preload">
 	<script>
@@ -28,7 +29,7 @@
 					if (response["result"] == "success"){
 						let boards = response["boards"];
 						for (let i = 0; i < boards.length; i++){
-							makeBoard(boards[i]["title"],boards[i]["author"],boards[i]["comment"])
+							makeBoard(i,boards[i]["title"],boards[i]["author"],boards[i]["comment"],boards[i]["date"])
 						}
 					}else {
 						alert("글을 받아오지 못했습니다")
@@ -36,16 +37,15 @@
 				}
 			})
 		}
-		function makeBoard(title,author,comment){
-        let tempHtml = `<tbody>
+		function makeBoard(index,title,author,comment,date){
+        let tempHtml = `
         <tr>
-            <td>1</td>
+            <td>${++index}</td>
             <td>${title}</td>
             <td>${author}</td>
             <td>${comment}</td>
-            <td>1</td>
-        </tr>
-    </tbody>`
+            <td>${date}</td>
+        </tr>`
         $('#table-box').append(tempHtml);
     }
 
@@ -68,23 +68,23 @@
 								<h2>고양이 Talk</h2>
 								<p>
 								<div>
-									<table class = "table table-striped" id= "table-box">
+								<table class = "table table-striped" >
 										<thead>
 											<tr>
 												<th>번호</th>
 												<th>제목</th>
 												<th>작성자</th>
+												<th>내용</th>
 												<th>날짜</th>
-												<th>조회수</th>
 											</tr>
 										</thead>
-										<tbody id = "test">
+										<tbody id= "table-box">
 											<tr>
 												<td>1</td>
 												<td>어쩌구쓰저쩌구쓰</td>
 												<td>구찌루</td>
+												<td>아니글쎄~</td>
 												<td>2020.12.29</td>
-												<td>1</td>
 											</tr>
 										</tbody>
 									</table>
