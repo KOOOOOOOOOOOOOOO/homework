@@ -22,11 +22,11 @@
 		function showBoard(){
 			$.ajax({
 				type: 'GET',
-				url: '/board',
+				url: '/boards',
 				data: {},
 				success: function (response){
-					if (response['result'] == 'success'){
-						let boards = response["post"];
+					if (response["result"] == "success"){
+						let boards = response["boards"];
 						for (let i = 0; i < boards.length; i++){
 							makeBoard(boards[i]["title"],boards[i]["author"],boards[i]["comment"])
 						}
@@ -78,7 +78,7 @@
 												<th>조회수</th>
 											</tr>
 										</thead>
-										<tbody>
+										<tbody id = "test">
 											<tr>
 												<td>1</td>
 												<td>어쩌구쓰저쩌구쓰</td>

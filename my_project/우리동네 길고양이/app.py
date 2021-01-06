@@ -41,10 +41,10 @@ def insert_board():
     db.boards.insert_one(post)
     return jsonify({'result': 'success','msg': '글이 성공적으로 작성되었습니다'})
 
-@app.route('/board',methods=['GET'])
+@app.route('/boards',methods=['GET'])
 def read_board():
-    boards = list(db.post.find({}, {'_id': False}))
-    return jsonify({'result': 'success', 'post': boards })
+    boards = list(db.boards.find({}, {'_id': 0}))
+    return jsonify({'result': 'success', 'boards': boards })
 
 if __name__ == '__main__':
     app.run('0.0.0.0', port=5000, debug=True)
