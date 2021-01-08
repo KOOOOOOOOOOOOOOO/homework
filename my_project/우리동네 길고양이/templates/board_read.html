@@ -16,20 +16,19 @@
 	<body class="is-preload">
 	<script>
 		$(document).ready(function(){
-			$('#table-box').html("")
 			showBoard();
 		})
-
 		function showBoard(){
 			$.ajax({
 				type: 'GET',
-				url: '/boards',
+				url: '/read',
 				data: {},
 				success: function (response){
 					if (response["result"] == "success"){
 						let boards = response["boards"];
 						for (let i = 0; i < boards.length; i++){
-							makeBoard(i,boards[i]["title"],boards[i]["author"],boards[i]["comment"],boards[i]["date"])
+							readBoard(i,boards[i]["title"],boards[i]["author"],boards[i]["date"])
+							readComment(boards[i]["comment"])
 						}
 					}else {
 						alert("글을 받아오지 못했습니다")
@@ -37,20 +36,31 @@
 				}
 			})
 		}
-		function makeBoard(index,title,author,comment,date){
-        let tempHtml = `
-        <tr>
-            <td>${++index}</td>
-            <td onclick="location.href='/board_read'">${title}</td>
-            <td>${author}</td>
-            <td>${comment}</td>
-            <td>${date}</td>
-        </tr>`
-        $('#table-box').append(tempHtml);
-    }
+
+		function readBoard(title,author,date) {
+			tempHtml = `<tr>
+					<th>제목</th>
+					<td>${title}</td>
+					<th>조회수</th>
+					<td>0</td>
+					</tr>
+					<tr>
+					<th>작성자</th>
+					<td>${author}</td>
+					<th>작성시간</th>
+					<td>${date}</td>
+					</tr>`
+			$('#detail-view').append(tempHtml);
+		}
+
+		function readComment(comment){
+			tempHtml2 = `<p>
+						${comment}
+						</p>`
+			$('#comment-view').append(tempHtml2);
+		}
 
 	</script>
-
 		<!-- Wrapper -->
 			<div id="wrapper">
 
@@ -61,40 +71,42 @@
 					</header>
 
 				<!-- Main -->
-					<div id="main">
-
-						<!-- Content -->
-							<section id="content" class="main">
+					<div id = "main">
+						    <section id="content" class="main">
 								<h2>고양이 Talk</h2>
-								<p>
-								<div>
-								<table class = "table table-hover" >
-										<thead>
-											<tr>
-												<th>번호</th>
-												<th>제목</th>
-												<th>작성자</th>
-												<th>내용</th>
-												<th>날짜</th>
-											</tr>
-										</thead>
-										<tbody id= "table-box">
-											<tr>
-												<td>1</td>
-												<td>어쩌구쓰저쩌구쓰</td>
-												<td>구찌루</td>
-												<td>아니글쎄~</td>
-												<td>2020.12.29</td>
-											</tr>
-										</tbody>
-									</table>
-									<ul class="actions special">
-										<li><a href="/board_create" class="button">글쓰기</a></li>
-									</ul>
-								</div>
-								</p>
 							</section>
+                        	<section class="main" style="max-width: 1200px;">
+            				<div class="content" id = "detail-view">
+                				<table class="content">
+								<colgroup>
+									<col width="15%">
+									<col width="35%">
+									<col width="15%">
+									<col width="*">
+								</colgroup>
 
+								<tbody>
+									<tr>
+										<th>제목</th>
+										<td>어쩌구</td>
+										<th>조회수</th>
+										<td>0</td>
+									</tr>
+									<tr>
+										<th>작성자</th>
+										<td>구찌루</td>
+										<th>작성시간</th>
+										<td>2021.01.02</td>
+									</tr>
+								</tbody>
+							</table>
+								<div id = "comment-view">
+								<p>
+									내용
+								</p>
+								</div>
+							</div>
+					</section>
 					</div>
 
 				<!-- Footer -->

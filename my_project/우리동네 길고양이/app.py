@@ -24,6 +24,10 @@ def generic():
 def board_create():
     return render_template('board_create.html')
 
+@app.route('/board_read')
+def board_read():
+    return render_template('board_read.html')
+
 @app.route('/board_insert', methods=['POST'])
 def insert_board():
     title_receive = request.form['title_give']
@@ -43,6 +47,11 @@ def insert_board():
 
 @app.route('/boards',methods=['GET'])
 def read_board():
+    boards = list(db.boards.find({}, {'_id': 0}))
+    return jsonify({'result': 'success', 'boards': boards })
+
+@app.route('/read',methods=['GET'])
+def read_board_detail():
     boards = list(db.boards.find({}, {'_id': 0}))
     return jsonify({'result': 'success', 'boards': boards })
 
