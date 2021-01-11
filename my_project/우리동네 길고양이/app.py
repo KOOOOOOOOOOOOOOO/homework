@@ -32,17 +32,23 @@ def board_read():
 def insert_board():
     title_receive = request.form['title_give']
     author_receive = request.form['author_give']
-    date = datetime.datetime.today()
+    date = datetime.datetime.utcnow()
     comment_receive = request.form['comment_give']
 
+
     post = {
+
         'title' : title_receive,
         'author' : author_receive,
         'comment' : comment_receive,
-        'date' : date
+        'date' : date,
+        'idx' : db.boards.count_documents({}) + 1
     }
 
     db.boards.insert_one(post)
+
+
+
     return jsonify({'result': 'success','msg': '글이 성공적으로 작성되었습니다'})
 
 @app.route('/boards',methods=['GET'])
@@ -52,7 +58,7 @@ def read_board():
 
 @app.route('/read',methods=['GET'])
 def read_board_detail():
-    boards = list(db.boards.find({}, {'_id': 0}))
+    boards = list(db.boards.find_one({},{ '_id':0}))
     return jsonify({'result': 'success', 'boards': boards })
 
 if __name__ == '__main__':
