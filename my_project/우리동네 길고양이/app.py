@@ -53,8 +53,8 @@ def insert_board():
 
 @app.route('/delete',methods=['POST'])
 def delete_board():
-    idx = request.args.get('idx')
-    db.boards.delete_one({'idx': int(idx)}, {'_id': 0})
+    idx_receive = request.form['idx_give']
+    db.boards.delete_one({'idx': int(idx_receive)})
     return jsonify({'result' : 'success','msg' : '글이 삭제됨' })
 
 @app.route('/boards',methods=['GET'])
