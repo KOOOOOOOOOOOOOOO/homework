@@ -5,31 +5,15 @@ var mapContainer = document.getElementById('map'), // 지도를 표시할 div
     };
 var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
 
-
-function getLocation() {
-  if (navigator.geolocation) { // GPS를 지원하면
-    navigator.geolocation.getCurrentPosition(function(position) {
-      alert(position.coords.latitude + ' ' + position.coords.longitude);
-    }, function(error) {
-      console.error(error);
-    }, {
-      enableHighAccuracy: false,
-      maximumAge: 0,
-      timeout: Infinity
-    });
-  } else {
-    alert('GPS를 지원하지 않습니다');
-  }
-}
-getLocation();
-
-
-/*kakao.maps.event.addListener(map, 'click',function (mouseEvent){
+kakao.maps.event.addListener(map, 'click',function (mouseEvent){
     var latlng = mouseEvent.latLng;
+    cat_info();
     console.log(latlng);
-
-
 })
+
+function cat_info(mouseEvent){
+    alert("its work!");
+}
 
 
 
