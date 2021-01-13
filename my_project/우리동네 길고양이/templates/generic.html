@@ -30,7 +30,22 @@
 	</head>
 	<script>
 		function saveCatinfo(){
-			alert("its work!");
+                let name = $("#name").val();
+                let info = $("#post-comment").val();
+                let ll = latlng
+                $.ajax({
+                    type: "POST",
+                    url: "/catInfo",
+                    data: { name_give: name, info_give : info, latlng_give : ll },
+                    success: function (response) { // 성공하면
+                        if (response["result"] == "success") {
+                            alert("포스팅 성공!");
+                            window.location.reload();
+                        }else{
+                            alert("서버오류!")
+                        }
+                    }
+                })
 		}
 	</script>
 	<body class="is-preload">
@@ -59,8 +74,8 @@
 									<div id="post-box" class="form-post" style="display:none">
 										<div>
 											<div class="form-group">
-												<label for="post-url">아티클 URL</label>
-												<input id="post-url" class="form-control" placeholder="">
+												<label for="name">아티클 URL</label>
+												<input id="name" class="form-control" placeholder="">
 											</div>
 											<div class="form-group">
 												<label for="post-comment">간단 코멘트</label>

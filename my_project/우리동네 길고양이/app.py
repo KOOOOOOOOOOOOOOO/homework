@@ -55,6 +55,22 @@ def insert_board():
 
     return jsonify({'result': 'success','msg': '글이 성공적으로 작성되었습니다'})
 
+@app.route('/catInfo',methods=['POST'])
+def cat_Info():
+    name_receive = request.form['name_give']
+    info_receive = request.form['info_give']
+    latlng_receive = request.form['latlng_give']
+
+    cat_infomation = {
+        'name' : name_receive,
+        'info' : info_receive,
+        'latlang' : latlng_receive
+    }
+
+    db.catsinfo.insert_one(cat_infomation)
+
+    return jsonify({'result': 'success', 'msg': '등록되었습니다'})
+
 @app.route('/delete',methods=['POST'])
 def delete_board():
     idx_receive = request.form['idx_give']
