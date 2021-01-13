@@ -11,10 +11,9 @@ kakao.maps.event.addListener(map, 'click',function (mouseEvent){
     console.log(latlng);
 })
 
-function cat_info(mouseEvent){
-    alert("its work!");
+function cat_info(){
+        $("#post-box").show();
 }
-
 
 
 
