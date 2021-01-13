@@ -16,20 +16,22 @@
 	<body class="is-preload">
 	<script>
 		$(document).ready(function(){
-			showBoard();
+			let searchParams = new URLSearchParams(window.location.search)
+			let idx = searchParams.get('idx');
+			showBoard(idx);
 		})
-		function showBoard(){
+		function showBoard(idx){
 			$.ajax({
 				type: 'GET',
-				url: '/read',
+				url: `/read?idx=${idx}`,
 				data: {},
 				success: function (response){
 					if (response["result"] == "success"){
-						let boards = response["boards"];
-						for (let i = 0; i < boards.length; i++){
-							readBoard(i,boards[i]["title"],boards[i]["author"],boards[i]["date"])
-							readComment(boards[i]["comment"])
-						}
+						let board = response["board"];
+						$("#title").html(board["title"]);
+						$("#author").html(board["author"]);
+						$("#comment").html(board["comment"]);
+						$("#date").html(board["date"]);
 					}else {
 						alert("글을 받아오지 못했습니다")
 					}
@@ -37,27 +39,24 @@
 			})
 		}
 
-		function readBoard(title,author,date) {
-			tempHtml = `<tr>
-					<th>제목</th>
-					<td>${title}</td>
-					<th>조회수</th>
-					<td>0</td>
-					</tr>
-					<tr>
-					<th>작성자</th>
-					<td>${author}</td>
-					<th>작성시간</th>
-					<td>${date}</td>
-					</tr>`
-			$('#detail-view').append(tempHtml);
-		}
+		function deleteBoard(){
 
-		function readComment(comment){
-			tempHtml2 = `<p>
-						${comment}
-						</p>`
-			$('#comment-view').append(tempHtml2);
+			let searchParams = new URLSearchParams(window.location.search)
+			let idx = searchParams.get('idx');
+
+			$.ajax({
+                    type: "POST",
+                    url: `/delete?idx=${idx}`,
+                    data: {idx_give : idx},
+                    success: function (response) {
+						if (response["result"] == "success") {
+                            alert(response["msg"]);
+                            location.href = '/board_list'
+						}else{
+							alert("실패....")
+						}
+					}
+			})
 		}
 
 	</script>
@@ -88,24 +87,26 @@
 								<tbody>
 									<tr>
 										<th>제목</th>
-										<td>어쩌구</td>
+										<td id = "title">어쩌구</td>
 										<th>조회수</th>
 										<td>0</td>
 									</tr>
 									<tr>
 										<th>작성자</th>
-										<td>구찌루</td>
+										<td id = "author">구찌루</td>
 										<th>작성시간</th>
-										<td>2021.01.02</td>
+										<td id = "date">2021.01.02</td>
 									</tr>
 								</tbody>
 							</table>
 								<div id = "comment-view">
-								<p>
-									내용
+								<p id = "comment">
 								</p>
 								</div>
-							</div>
+								<ul class="actions special">
+									<li><input type = "button" class="button" onclick="deleteBoard()"/>삭제</li>
+								</ul>
+						</div>
 					</section>
 					</div>
 

@@ -51,6 +51,12 @@ def insert_board():
 
     return jsonify({'result': 'success','msg': '글이 성공적으로 작성되었습니다'})
 
+@app.route('/delete',methods=['POST'])
+def delete_board():
+    idx = request.args.get('idx')
+    db.boards.delete_one({'idx': int(idx)}, {'_id': 0})
+    return jsonify({'result' : 'success','msg' : '글이 삭제됨' })
+
 @app.route('/boards',methods=['GET'])
 def read_board():
     boards = list(db.boards.find({}, {'_id': 0}))
@@ -58,8 +64,10 @@ def read_board():
 
 @app.route('/read',methods=['GET'])
 def read_board_detail():
-    boards = list(db.boards.find_one({},{ '_id':0}))
-    return jsonify({'result': 'success', 'boards': boards })
+    idx = request.args.get('idx')
+    board = db.boards.find_one({'idx': int(idx)}, {'_id': 0})
+    return jsonify({'result': 'success', 'board': board })
+
 
 if __name__ == '__main__':
     app.run('0.0.0.0', port=5000, debug=True)
