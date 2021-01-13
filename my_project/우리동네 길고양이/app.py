@@ -34,6 +34,10 @@ def insert_board():
     author_receive = request.form['author_give']
     date = datetime.datetime.utcnow()
     comment_receive = request.form['comment_give']
+    board = db.boards.find_one(sort=[("uid", -1)])
+    index = 1
+    if board is not None:
+        index = board['idx'] + 1
 
 
     post = {
@@ -42,7 +46,7 @@ def insert_board():
         'author' : author_receive,
         'comment' : comment_receive,
         'date' : date,
-        'idx' : db.boards.count_documents({}) + 1
+        'idx' : index
     }
 
     db.boards.insert_one(post)
