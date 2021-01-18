@@ -7,9 +7,41 @@ var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니
 
 kakao.maps.event.addListener(map, 'click',function (mouseEvent){
     var latlng = mouseEvent.latLng;
+    $("#la").val(latlng.La);
+    $("#ma").val(latlng.Ma);
     cat_info();
-    console.log(latlng);
+    addMarker(mouseEvent.latLng);
 })
+
+var makers = [];
+
+addMarker(new kakao.maps.LatLng(33.450701, 126.570667));
+
+function addMarker(position){
+
+    var marker = new kakao.maps.Marker({
+        position: position
+    });
+
+    marker.setMap(map);
+
+    marker.push(marker);
+
+}
+
+function setMarkers(map){
+    for (var i=o; i<markers.length; i++){
+        markers[i].setMap(map);
+    }
+}
+
+function showMarkers(){
+    setMarkers(map)
+}
+
+function hideMarkers(){
+    setMarkers(null);
+}
 
 function cat_info(){
         $("#post-box").show();

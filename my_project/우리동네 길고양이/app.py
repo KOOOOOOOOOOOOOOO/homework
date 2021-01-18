@@ -59,12 +59,14 @@ def insert_board():
 def cat_Info():
     name_receive = request.form['name_give']
     info_receive = request.form['info_give']
-    latlng_receive = request.form['latlng_give']
+    la_receive = request.form['la_give']
+    ma_receive = request.form['ma_give']
 
     cat_infomation = {
         'name' : name_receive,
         'info' : info_receive,
-        'latlang' : latlng_receive
+        'la' : la_receive,
+        'ma' : ma_receive
     }
 
     db.catsinfo.insert_one(cat_infomation)
