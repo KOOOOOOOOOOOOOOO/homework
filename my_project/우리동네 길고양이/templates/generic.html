@@ -10,9 +10,6 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="../static/assets/css/main.css" />
-		 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-              integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-              crossorigin="anonymous">
 		<noscript><link rel="stylesheet" href="../static/assets/css/noscript.css" /></noscript>
 		<style>
 			.wrap {position: absolute;left: 0;bottom: 40px;width: 288px;height: 132px;margin-left: -144px;text-align: left;overflow: hidden;font-size: 12px;font-family: 'Malgun Gothic', dotum, '돋움', sans-serif;line-height: 1.5;}
@@ -51,6 +48,21 @@
                     }
                 })
 		}
+
+		function showCatsmarker(){
+			$.ajax({
+				type: 'GET',
+				url: '/markers',
+				data: {},
+				success: function (response) {
+					let markers = response['markers'];
+					for (let i = 0; i < markers.length; i++) {
+						addMarker(new kakao.maps.LatLng(markers[i].ma, markers[i].la));
+					}
+				}
+			})
+
+		}
 	</script>
 	<body class="is-preload">
 
@@ -72,8 +84,8 @@
 								<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=7a365f0d6569a4ee2719a49efb37bb77"></script>
 								<p>
 									<p>
-									<button onclick="hideMarkers()">고양이 감추기</button>
 									<button onclick="showMarkers()">고양이 보이기</button>
+									<button onclick="hideMarkers()">고양이 감추기</button>
 								</p>
 								</p>
 								<p><h3>우리 동네 고양이를 표시해주세요!</h3></p>
@@ -96,10 +108,11 @@
 											</div>
 										</div>
 											<div class="form-group">
-												<label for="post-comment">고양이에 대해 간단하게 설명해주세요!</label>
+												<span class="input-group-text">고양이에 대해 간단하게 설명해주세요!</span>
 												<textarea id="post-comment" class="form-control" rows="2"></textarea>
 											</div>
-											<button type="button" class="btn btn-primary" onclick="saveCatinfo()">저장</button>
+										<hr>
+											<p><button type="button" class="button" onclick="saveCatinfo()">저장</button></p>
 										</div>
 									<ul class="actions special">
 										<li><a href="/" class="button">메인으로</a></li>

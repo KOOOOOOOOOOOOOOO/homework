@@ -90,6 +90,11 @@ def read_board_detail():
     board = db.boards.find_one({'idx': int(idx)}, {'_id': 0})
     return jsonify({'result': 'success', 'board': board })
 
+@app.route('/markers',methods=['GET'])
+def getMarkers():
+    markers = list(db.catsinfo.find({}, {'_id':0}))
+    return jsonify({'result': 'success', 'markers': markers })
+
 
 if __name__ == '__main__':
     app.run('0.0.0.0', port=5000, debug=True)
