@@ -22,19 +22,18 @@ kakao.maps.event.addListener(map, 'click',function (mouseEvent){
 var markers = [];
 
 function showCatsInfo(){
-			$.ajax({
-				type: 'GET',
-				url: '/markers',
-				data: {},
-				success: function (response) {
-					let markers = response['markers'];
-					for (let i = 0; i < markers.length; i++) {
+    $.ajax({
+        type: 'GET',
+        url: '/markers',
+        data: {},
+        success: function (response) {
+            let markers = response['markers'];
+            for (let i = 0; i < markers.length; i++) {
 
-					}
-				}
-			})
-
-		}
+            }
+        }
+    })
+}
 
 addMarker(new kakao.maps.LatLng(33.450701, 126.570667));
 
@@ -74,55 +73,18 @@ function addMarker(position) {
 
 }
 
-    function makeOverListener(map, marker, infowindow) {
-        return function() {
-            infowindow.open(map, marker);
-        };
-    }
+function makeOverListener(map, marker, infowindow) {
+    return function() {
+        infowindow.open(map, marker);
+    };
+}
 
     // 인포윈도우를 닫는 클로저를 만드는 함수입니다
-    function makeOutListener(infowindow) {
-        return function() {
-            infowindow.close();
-        };
-    }
-
-
-   /* var content = '<div class="wrap">' +
-        '    <div class="info">' +
-        '        <div class="title">' +
-        '            쫑쫑이' +
-        '            <div class="close" onclick="closeOverlay()" title="닫기"></div>' +
-        '        </div>' +
-        '        <div class="body">' +
-        '            <div class="img">' +
-        '                <img src="https://images.mypetlife.co.kr/content/uploads/2019/09/06144600/zach-reiner-YVpr0OdSUe0-unsplash.jpg" width="73" height="70">' +
-        '           </div>' +
-        '            <div class="desc">' +
-        '                <div class="ellipsis">00시 00동 어쩌구 저쩌구</div>' +
-        '                <div class="comment">고목 나무 옆 쓰레기통에서 기웃거림.</div>' +
-        '            </div>' +
-        '        </div>' +
-        '    </div>' +
-        '</div>';
-
-    var overlay = new kakao.maps.CustomOverlay({
-        content: content,
-        map: map,
-        position: marker.getPosition()
-    });
-
-    kakao.maps.event.addListener(marker, 'click', function() {
-        overlay.setMap(map);
-    });
-
-     function closeOverlay() {
-        overlay.setMap(null);
-    }
-
+function makeOutListener(infowindow) {
+    return function() {
+        infowindow.close();
+    };
 }
-*/
-
 
 function setMarkers(map){
     for (var i=0; i<markers.length; i++){
