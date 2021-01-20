@@ -34,7 +34,7 @@ function addMarker(m) {
 
         var marker = new kakao.maps.Marker({
             map: map,
-            position: positions[i].latlng,
+            position: position_give,
             image: markerImage
         });
            var infowindow = new kakao.maps.InfoWindow({
