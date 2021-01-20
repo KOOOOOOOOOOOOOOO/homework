@@ -21,6 +21,21 @@ kakao.maps.event.addListener(map, 'click',function (mouseEvent){
 
 var markers = [];
 
+function showCatsInfo(){
+			$.ajax({
+				type: 'GET',
+				url: '/markers',
+				data: {},
+				success: function (response) {
+					let markers = response['markers'];
+					for (let i = 0; i < markers.length; i++) {
+
+					}
+				}
+			})
+
+		}
+
 addMarker(new kakao.maps.LatLng(33.450701, 126.570667));
 
 function addMarker(position) {
