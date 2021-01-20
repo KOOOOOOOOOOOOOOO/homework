@@ -57,7 +57,7 @@
 				success: function (response) {
 					let markers = response['markers'];
 					for (let i = 0; i < markers.length; i++) {
-						addMarker(new kakao.maps.LatLng(markers[i].ma, markers[i].la));
+						addMarker(markers[i]);
 					}
 				}
 			})

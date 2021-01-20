@@ -21,32 +21,10 @@ kakao.maps.event.addListener(map, 'click',function (mouseEvent){
 
 var markers = [];
 
-function showCatsInfo(){
-    $.ajax({
-        type: 'GET',
-        url: '/markers',
-        data: {},
-        success: function (response) {
-            let markers = response['markers'];
-            for (let i = 0; i < markers.length; i++) {
-
-            }
-        }
-    })
-}
-
 addMarker(new kakao.maps.LatLng(33.450701, 126.570667));
 
-function addMarker(position) {
-
-    var positions = [
-        {
-            content: '<div>test</div>',
-            latlng : position
-        }
-    ];
-
-    for (var i = 0; i < positions.length; i++) {
+function addMarker(m) {
+        position_give = new kakao.maps.LatLng(m.ma, m.la)
 
         var imageSrc = "/static/images/cat_marker.png",
             imageSize = new kakao.maps.Size(64, 69), // 마커이미지의 크기입니다
@@ -60,9 +38,8 @@ function addMarker(position) {
             image: markerImage
         });
            var infowindow = new kakao.maps.InfoWindow({
-            content: positions[i].content // 인포윈도우에 표시할 내용
+            content: `<div>${m.name}</div><div>${m.info}</div>` // 인포윈도우에 표시할 내용
         });
-    }
 
     kakao.maps.event.addListener(marker, 'mouseover', makeOverListener(map, marker, infowindow));
     kakao.maps.event.addListener(marker, 'mouseout', makeOutListener(infowindow));
