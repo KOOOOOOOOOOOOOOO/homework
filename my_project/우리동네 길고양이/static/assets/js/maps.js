@@ -6,6 +6,7 @@ var mapContainer = document.getElementById('map'), // 지도를 표시할 div
 var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
 
 kakao.maps.event.addListener(map, 'click',function (mouseEvent){
+
     var latlng = mouseEvent.latLng;
     $("#la").val(latlng.La);
     $("#ma").val(latlng.Ma);
@@ -24,23 +25,55 @@ addMarker(new kakao.maps.LatLng(33.450701, 126.570667));
 
 function addMarker(position) {
 
-    var imageSrc = "/static/images/cat_marker.png",
-        imageSize = new kakao.maps.Size(64, 69), // 마커이미지의 크기입니다
-        imageOption = {offset: new kakao.maps.Point(27, 69)}; // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
+    var positions = [
+        {
+            content: '<div>test</div>',
+            latlng : position
+        }
+    ];
 
-    var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imageOption);
+    for (var i = 0; i < positions.length; i++) {
 
-    var marker = new kakao.maps.Marker({
-        position: position,
-        image: markerImage
-    });
+        var imageSrc = "/static/images/cat_marker.png",
+            imageSize = new kakao.maps.Size(64, 69), // 마커이미지의 크기입니다
+            imageOption = {offset: new kakao.maps.Point(27, 69)}; // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
+
+        var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imageOption);
+
+        var marker = new kakao.maps.Marker({
+            map: map,
+            position: positions[i].latlng,
+            image: markerImage
+        });
+           var infowindow = new kakao.maps.InfoWindow({
+            content: positions[i].content // 인포윈도우에 표시할 내용
+        });
+    }
+
+    kakao.maps.event.addListener(marker, 'mouseover', makeOverListener(map, marker, infowindow));
+    kakao.maps.event.addListener(marker, 'mouseout', makeOutListener(infowindow));
 
     marker.setMap(map);
 
     markers.push(marker);
 
+}
 
-    var content = '<div class="wrap">' +
+    function makeOverListener(map, marker, infowindow) {
+        return function() {
+            infowindow.open(map, marker);
+        };
+    }
+
+    // 인포윈도우를 닫는 클로저를 만드는 함수입니다
+    function makeOutListener(infowindow) {
+        return function() {
+            infowindow.close();
+        };
+    }
+
+
+   /* var content = '<div class="wrap">' +
         '    <div class="info">' +
         '        <div class="title">' +
         '            쫑쫑이' +
@@ -73,9 +106,7 @@ function addMarker(position) {
     }
 
 }
-
-
-
+*/
 
 
 function setMarkers(map){
